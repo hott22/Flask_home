@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Привет, {{ name }}</h1>
+<form action="{{ url_for('del_cookie') }}"
+      method="post">
+    <button type="submit">Выйти</button>
+</form>
+{% endblock %}
