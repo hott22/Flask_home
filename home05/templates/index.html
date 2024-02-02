@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Создание задачи</h1>
+<form action="{{ url_for('add_task_post') }}" method="post">
+    <label for="title">Заголовок</label><br>
+    <input type="text"
+           id="title"
+           name="title"
+           placeholder="Заголовок задачи"
+           required><br>
+    <label for="description">Описание</label><br>
+    <textarea
+            id="description"
+            cols="100"
+            rows="5"
+            name="description"
+            placeholder="Описание задачи"
+            required>
+    </textarea><br>
+    <label>Статус выполнения: </label><br>
+    <input type="radio"
+           value="true"
+           id="true"
+           name="completed"
+           placeholder="Выполнена"><label for="true"> Выполнена</label><br>
+    <input type="radio"
+           value="false"
+           id="false"
+           name="completed"
+           placeholder="Не выполнена"><label for="false"> Не выполнена</label><br><br>
+    <input type="submit"
+           value="Отправить">
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<p class="col-12 col-md-6">
+      {% if task %}
+      <h1>Задача</h1>
+      Заголовок: {{ task.title }}<br>
+      Описание: {{ task.description }}<br>
+      Статус: {{ task.completed  }}</p>
+      {% else %}
+      <h1>Задачи с id: {{ task_id }} не существует!</h1>
+      {% endif %}
+{% endblock %}
