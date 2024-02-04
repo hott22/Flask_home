@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Создание заказа:</h1>
+<form action="{{ url_for('add_order') }}" method="post">
+    <label for="user_id">ID пользователя</label><br>
+    <input type="number"
+           id="user_id"
+           name="user"
+           placeholder="ID пользователя"
+           required><br>
+    <label for="product_id">ID товара</label><br>
+    <input type="number"
+           id="product_id"
+           name="product"
+           placeholder="ID товара"
+           required><br>
+    <label for="order_date">Дата заказа</label><br>
+    <input type="date"
+           name="order_date"
+           id="order_date"
+           placeholder="Дата заказа"
+           required><br>
+    <label>Статус выполнения заказа: </label><br>
+    <input type="radio"
+           value="true"
+           id="true"
+           name="order_status"
+           placeholder="Выполнена"><label for="true"> Выполнен</label><br>
+    <input type="radio"
+           value="false"
+           id="false"
+           name="order_status"
+           placeholder="Не выполнена"><label for="false"> Не выполнен</label><br><br>
+    <button type="submit">Отправить</button>
+</form>
+{% endblock %}

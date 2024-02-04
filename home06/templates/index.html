@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href="{{ url_for('add_user_get') }}">Создать пользователя</a><br>
+<a href="{{ url_for('get_all_users') }}">Посмотреть всех пользователей</a><br>
+<a href="{{ url_for('user_get_id') }}">Посмотреть пользователя по ID</a><br><br>
+
+<a href="{{ url_for('add_product_get') }}">Создать товар</a><br>
+<a href="{{ url_for('get_all_products') }}">Посмотреть все товары</a><br>
+<a href="{{ url_for('product_get_id') }}">Посмотреть товар по ID</a><br><br>
+
+
+<a href="{{ url_for('add_order_get') }}">Создать заказ</a><br>
+<a href="{{ url_for('get_all_orders') }}">Посмотреть все заказы</a><br>
+<a href="{{ url_for('order_get_id') }}">Посмотреть заказ по ID</a><br><br>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<p class="col-12 col-md-6">
+      {% if product %}
+      <h1>Продукт:</h1>
+      ID: {{ product.product_id }}<br>
+      Название продукта: {{ product.product_title }}<br>
+      Описание продукта: {{ product.product_description }}<br>
+      Цена продукта: {{ product.product_price }}<br></p>
+      {% else %}
+      <h1>Товар с id: {{ product_id }} не существует!</h1>
+      {% endif %}
+{% endblock %}

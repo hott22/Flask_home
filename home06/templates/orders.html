@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    {% for order in orders %}
+      <p class="col-12 col-md-6">
+      ID: {{ order.order_id }}<br>
+      ID пользователя: {{ order.user }}<br>
+      ID продукты: {{ order.product }}<br>
+      Дата заказа: {{ order.order_date }}<br>
+      Статус выполнения заказа: {{ order.order_status }}</p>
+    {% endfor %}
+  </div>
+{% endblock %}
