@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<p class="col-12 col-md-6">
+      {% if order %}
+      <h1>Заказ:</h1>
+      ID: {{ order.order_id }}<br>
+      ID пользователя: {{ order.user }}<br>
+      ID продукты: {{ order.product }}<br>
+      Дата заказа: {{ order.order_date }}<br>
+      Статус выполнения заказа: {{ order.order_status }}</p>
+      {% else %}
+      <h1>Товар с id: {{ order_id }} не существует!</h1>
+      {% endif %}
+{% endblock %}

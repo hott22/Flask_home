@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<p class="col-12 col-md-6">
+      {% if task %}
+      <h1>Задача</h1>
+      id: {{ task.id }}
+      Заголовок: {{ task.title }}<br>
+      Описание: {{ task.description }}<br>
+      Статус: {{ task.completed  }}</p>
+      {% else %}
+      <h1>Задачи с id: {{ task_id }} не существует!</h1>
+      {% endif %}
+
+
+<form action="/task_put" method="post">
+    <label for="title">Заголовок</label><br>
+    <input type="text"
+           id="title"
+           name="title"
+           placeholder="Заголовок задачи"
+           required><br>
+    <label for="description">Описание</label><br>
+    <textarea
+            id="description"
+            cols="100"
+            rows="5"
+            name="description"
+            placeholder="Описание задачи"
+            required>
+    </textarea><br>
+    <label>Статус выполнения: </label><br>
+    <input type="radio"
+           value="true"
+           id="true"
+           name="completed"
+           placeholder="Выполнена"><label for="true"> Выполнена</label><br>
+    <input type="radio"
+           value="false"
+           id="false"
+           name="completed"
+           placeholder="Не выполнена"><label for="false"> Не выполнена</label><br><br>
+    <input type="submit"
+           value="Отправить">
+</form>
+{% endblock %}

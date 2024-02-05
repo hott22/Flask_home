@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Создание товара:</h1>
+<form action="{{ url_for('add_product') }}" method="post">
+    <label for="title">Название товара</label><br>
+    <input type="text"
+           id="title"
+           name="product_title"
+           placeholder="Название товара"
+           required><br>
+    <label for="description">Описание товара</label><br>
+    <textarea
+            id="description"
+            cols="100"
+            rows="2"
+            name="product_description"
+            placeholder="Описание товара"
+            required>
+    </textarea><br>
+    <label for="price">Цена товара</label><br>
+    <input type="number"
+           name="product_price"
+           id="price"
+           placeholder="Цена товара"
+           required><br><br>
+    <button type="submit">Отправить</button>
+</form>
+{% endblock %}

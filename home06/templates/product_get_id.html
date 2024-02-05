@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{{ url_for('get_product') }}" method="get">
+    <label for="id">ID товара для получения:</label><br>
+    <input type="number"
+           id="id"
+           name="product_id"
+           placeholder="ID"
+           required><br><br>
+    <button type="submit">Отправить</button>
+</form>
+{% endblock %}

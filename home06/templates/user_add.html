@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Регистрация пользователя:</h1>
+<form action="{{ url_for('add_user') }}" method="post">
+    <label for="name">Имя</label><br>
+    <input type="text"
+           id="name"
+           name="user_name"
+           placeholder="Имя пользователя"
+           required><br>
+    <label for="surname">Фамилия</label><br>
+    <input type="text"
+           id="surname"
+           name="user_surname"
+           placeholder="Фамилия пользователя"
+           required><br>
+    <label for="email">Email</label><br>
+    <input type="email"
+           name="user_email"
+           id="email"
+           placeholder="Email"
+           required><br>
+    <label for="password">Пароль</label><br>
+    <input type="password"
+           name="user_password"
+           id="password"
+           placeholder="Пароль"
+           required><br><br>
+    <button type="submit">Отправить</button>
+</form>
+{% endblock %}

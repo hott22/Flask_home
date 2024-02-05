@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    {% for product in products %}
+      <p class="col-12 col-md-6">
+      ID: {{ product.product_id }}<br>
+      Название продукта: {{ product.product_title }}<br>
+      Описание продукта: {{ product.product_description }}<br>
+      Цена продукта: {{ product.product_price }}<br></p>
+    {% endfor %}
+  </div>
+{% endblock %}

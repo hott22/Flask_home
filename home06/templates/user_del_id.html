@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Регистрация пользователя:</h1>
+<form action="{{ url_for('del_user') }}" method="post">
+    <label for="id">ID пользователя для удаления: </label><br>
+    <input type="number"
+           id="id"
+           name="user_id"
+           placeholder="ID"
+           required><br><br>
+    <button type="submit">Отправить</button>
+</form>
+{% endblock %}

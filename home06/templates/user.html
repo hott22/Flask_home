@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<p class="col-12 col-md-6">
+      {% if user %}
+      <h1>Пользователь:</h1>
+      ID: {{ user.user_id }}<br>
+      Имя: {{ user.user_name }}<br>
+      Фамилия: {{ user.user_surname }}<br>
+      Email: {{ user.user_email }}<br>
+      Пароль: {{ user.user_password }}</p>
+      {% else %}
+      <h1>Пользователя с id: {{ user_id }} не существует!</h1>
+      {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+      <h1>Старая задача</h1>
+      Заголовок: {{ task_old.title }}<br>
+      Описание: {{ task_old.description }}<br>
+      Статус: {{ task_old.completed  }}</p>
+
+      <h1>Измененная задача</h1>
+      Заголовок: {{ task.title }}<br>
+      Описание: {{ task.description }}<br>
+      Статус: {{ task.completed  }}</p>
+{% endblock %}
